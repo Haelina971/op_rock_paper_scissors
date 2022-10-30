@@ -41,6 +41,8 @@ function game() {
     }
     if(userVictory > computerVictory) {
         console.log(`You won! You have ${userVictory} points against ${computerVictory}!`);
+    } else {
+        console.log(`You lost! You have ${userVictory} points against ${computerVictory}!`)
     }
 }
 
