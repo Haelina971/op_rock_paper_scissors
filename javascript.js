@@ -10,19 +10,19 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
     if(playerSelection === computerSelection) {
-        console.log("It's a tie!");
+        return "It's a tie!";
     } else if(playerSelection === "Rock" && computerSelection === "Scissors") {
-        console.log("You won! Rock beats Scissors!");
         userVictory++;
+        return "You won! Rock beats Scissors!";
     } else if(playerSelection === "Paper" && computerSelection === "Rock") {
-        console.log("You won! Paper beats Rock!");
         userVictory++;
+        return "You won! Paper beats Rock!";
     } else if(playerSelection === "Scissors" && computerSelection === "Paper") {
-        console.log("You won! Scissors beats Paper!");
         userVictory++;
+        return "You won! Scissors beats Paper!";
     } else {
-        console.log(`You loose! ${computerSelection} beats ${playerSelection}!`);
         computerVictory++;
+        return `You loose! ${computerSelection} beats ${playerSelection}!`;
     }
 }
 
@@ -37,7 +37,7 @@ function game() {
         console.log(playerSelection);
         computerSelection = getComputerChoice();
         console.log(computerSelection);
-        playRound(playerSelection, computerSelection);
+        console.log(playRound(playerSelection, computerSelection));
     }
     if(userVictory > computerVictory) {
         console.log(`You won! You have ${userVictory} points against ${computerVictory}!`);
