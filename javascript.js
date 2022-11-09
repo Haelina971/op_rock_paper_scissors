@@ -48,8 +48,8 @@ function endOfGame() {
         body.textContent = `You won! You have ${userVictory} points against ${computerVictory}!`;
     } else {
         body.textContent = `You lost! You have ${userVictory} points against ${computerVictory}!`;
-    reset();
     }
+    reset();
 }
 
 function reset() {
