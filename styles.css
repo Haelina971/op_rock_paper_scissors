@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@font-face {
+    font-family: poke;
+    src: url(font/Pokemon\ Hollow.ttf);
+}
+
+* {
+    margin: 0;
+    background-color: black;
+    color: yellow;
+}
+
+.choices {
+    display: flex;
+    justify-content: space-around;
+    margin: 5em;
+}
+
+input {
+    height: 200px;
+    background-color: black;
+    border-radius: 4em;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 8em;
+    text-align: center;
+    margin: .5em;
+}
+
+h3 {
+    font-size: 6em;
+    font-family: poke;
+    -webkit-text-fill-color: yellow;
+    text-align: center;
+}
+
