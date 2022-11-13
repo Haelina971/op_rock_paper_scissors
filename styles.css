@@ -15,7 +15,6 @@
 .choices {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
 }
 
 .user_choices, .comp_choices {
@@ -29,7 +28,6 @@ input {
     max-height: 200px;
     max-width: fit-content;
     background-color: black;
-    border-radius: 4rem;
     transition: all 0.2s ease-in-out;
     margin: 1rem;
 }
@@ -37,6 +35,27 @@ input {
 img {
     max-height: 200px;
     max-width: fit-content;
+}
+
+.elements {
+    display: flex;
+    align-items: center;
+    flex: 2 1 auto;
+    justify-content: space-around;
+}
+
+.elements img {
+    max-height: 8rem;
+}
+
+.display_results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+p {
+    font-size: 1.5rem;
 }
 
 #squirtle {
@@ -55,14 +74,20 @@ input:hover {
     transform: scale(1.2);
 }
 
+.player_points img, .computer_points img {
+    max-width: 4rem;
+    margin-bottom: 2rem;
+    opacity: 20%;
+}
+
 h1 {
-    font-size: 5rem;
+    font-size: 3rem;
     text-align: center;
     margin: .5rem;
 }
 
 h2 {
-    font-size: 3rem;
+    font-size: 2rem;
     text-align: center;
 }
 
@@ -71,7 +96,7 @@ span {
 }
 
 h3 {
-    font-size: 5rem;
+    font-size: 3rem;
     font-family: poke;
     -webkit-text-fill-color: yellow;
     text-align: center;

@@ -1,5 +1,3 @@
-/* Array containing the three choices */
-const choices = ["Squirtle", "Bulbasaur", "Charmander"];
 let playerSelection;
 let computerSelection;
 let userVictory = 0;
@@ -7,16 +5,18 @@ let computerVictory = 0;
 let gameOn = true; //delete?
 const body = document.querySelector('body');
 
-/* Get random choice for computer */
+/* Get random choice for computer from an array containing the different choices */
 function getComputerChoice() {
+    const choices = ["Squirtle", "Bulbasaur", "Charmander"];
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
 /* Play one round and determine the winner */
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);   //Capitalize result
-    const results = document.querySelector('#results'); //Get div for displaying results
-    const score = document.querySelector('#score');
+    const results = document.querySelector('.results'); //Get div for displaying results
+    const score = document.querySelector('.score');
+    displayElement(playerSelection, computerSelection);
     if(playerSelection === computerSelection) {
         results.textContent = "It's a tie!";
     } else if(
@@ -30,6 +30,7 @@ function playRound(playerSelection, computerSelection) {
         results.textContent = `You loose! ${computerSelection} beats ${playerSelection}!`;
     }
     score.textContent = `${userVictory} : ${computerVictory}`;
+    displayUserPoints();
 }
 
 /* Add event listeners to buttons */
@@ -61,7 +62,31 @@ function reset() {
     resetButton.addEventListener('click', () => document.location.reload());
 }
 
+function displayElement(playerSelection, computerSelection) {
+    let imgPlayerElement = document.querySelector('.user_element');
+    let imgCompElement = document.querySelector('.comp_element');
+    if(playerSelection == "Squirtle") {
+        imgPlayerElement.setAttribute('src', 'images/water.png');
+    } else if(playerSelection == 'Charmander') {
+        imgPlayerElement.setAttribute('src', 'images/fire.png');
+    } else {
+        imgPlayerElement.setAttribute('src', 'images/leaf.png');
+    }
+    if(computerSelection == 'Squirtle') {
+        imgCompElement.setAttribute('src', 'images/water.png');
+    } else if(computerSelection == 'Charmander') {
+        imgCompElement.setAttribute('src', 'images/fire.png');
+    } else {
+        imgCompElement.setAttribute('src', 'images/leaf.png');
+    }
+}
 
+function displayUserPoints() {
+    const userPoints = document.querySelectorAll("div.player_points > img");
+    for(let i = 0; i < userVictory; i++) {
+        userPoints[i].style.opacity = '100%';
+    }
+}
 
 
 
