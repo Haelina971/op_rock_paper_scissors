@@ -58,8 +58,13 @@ p {
     font-size: 1.5rem;
 }
 
-#squirtle {
+#css_squirtle {
     transform: scaleX(-1);
+    max-width: fit-content;
+}
+
+#squirtle:hover {
+    transform: scale(1.2);
 }
 
 #comp_bulbasaur {

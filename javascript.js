@@ -2,6 +2,7 @@ let playerSelection;
 let computerSelection;
 let userVictory = 0;
 let computerVictory = 0;
+let winner;
 let gameOn = true; //delete?
 const body = document.querySelector('body');
 
@@ -31,6 +32,7 @@ function playRound(playerSelection, computerSelection) {
     }
     score.textContent = `${userVictory} : ${computerVictory}`;
     displayUserPoints();
+    displayCompPoints();
 }
 
 /* Add event listeners to buttons */
@@ -85,6 +87,13 @@ function displayUserPoints() {
     const userPoints = document.querySelectorAll("div.player_points > img");
     for(let i = 0; i < userVictory; i++) {
         userPoints[i].style.opacity = '100%';
+    }
+}
+
+function displayCompPoints() {
+    const compPoints = document.querySelectorAll("div.computer_points > img");
+    for(let i = 0; i < computerVictory; i++) {
+        compPoints[i].style.opacity = '100%';
     }
 }
 
